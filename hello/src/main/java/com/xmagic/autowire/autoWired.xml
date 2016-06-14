@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">   
+  
+    <!-- 该 BeanPostProcessor 将自动起作用，对标注 @Autowired 的 Bean 进行自动注入 -->   
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>   
+  
+    <!-- 移除 boss Bean 的属性注入配置的信息 -->   
+    <bean id="boss" class="com.xmagic.autowire.Boss"/>   
+    
+    <bean id="office" class="com.xmagic.autowire.Office">   
+        <property name="location" value="Shanghai"/>   
+    </bean>   
+    <bean id="car" class="com.xmagic.autowire.Car" scope="singleton">   
+        <property name="type" value="BMW i8"/>   
+        <property name="maxSpeed" value="2000km/h"/>   
+    </bean>   
+</beans>  
