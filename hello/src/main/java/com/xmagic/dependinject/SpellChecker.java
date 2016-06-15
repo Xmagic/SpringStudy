@@ -1,5 +1,4 @@
 package com.xmagic.dependinject;
-
 public class SpellChecker {
    public SpellChecker(){
       System.out.println("Inside SpellChecker constructor." );
